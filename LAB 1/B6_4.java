@@ -24,7 +24,7 @@ public class B6_4 {
             case "September": case "Sep": case "Sep.": case "9": month = 9; break;
             case "October": case "Oct": case "Oct.": case "10": month = 10; break;
             case "November": case "Nov": case "Nov.": case "11": month = 11; break;
-            case "DDecember": case "Dec": case "Dec.": case "12": month = 12; break;
+            case "December": case "Dec": case "Dec.": case "12": month = 12; break;
             default: return -1; 
         }
 
