@@ -1,0 +1,14 @@
+1. Điều gì xảy ra nếu người dùng chọn "Cancel"?
+
+Khi người dùng nhấn "Cancel", JOptionPane.showConfirmDialog() sẽ trả về JOptionPane.CANCEL_OPTION.
+Nhưng ở đoạn mã đề bài đã cho, dễ  CANCEL_OPTION sẽ không thỏa mãn OptionPane.YES_OPTION ?, nên chương trình sẽ hiển thị kết quả "You've chosen: No" (vì (option == JOptionPane.YES_OPTION ? "Yes" : "No") sẽ trả về "Yes" nếu điều kiện đúng và "No" khi điều kiện sai.)
+
+2. Làm thế nào để tùy chỉnh các lựa chọn thành "Yes" và "No" hoặc "I do" và "I don't"
+
+Ta sẽ thay thế JOptionPane.showConfirmDialog() thành JOptionPane.showOptionDialog().
+Ví dụ với trường hợp "I do" và "I don't", ta có thể chỉnh như sau:
+
+ String[] options = {"I do", "I don't"};
+        int option = JOptionPane.showOptionDialog(null, "Do you want to change the first class ticket?"
+        , "Confirm", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE,
+        null, options, options[0]);
