@@ -1,5 +1,5 @@
 import javax.swing.JOptionPane;
-
+//test git
 public class Bai2_2_6 {
     public static void main(String[] args) {
         String[] options = {"PT bac nhat 1 an", "PT bac nhat 2 an", "PT bac hai 1 an"};
