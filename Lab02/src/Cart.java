@@ -21,6 +21,14 @@ public class Cart {
 			addDigitalVideoDisc(dvd);
 		}
 	}
+
+	/*
+	public void addDigitalVideoDisc(DigitalVideoDisc... dvds) {
+		for (DigitalVideoDisc dvd : dvds) {
+			addDigitalVideoDisc(dvd); 
+		}
+	}
+	IDE báo lỗi do không thể biên dịch cùng lúc addDigitalVideoDisc(DigitalVideoDisc...) và addDigitalVideoDisc(DigitalVideoDisc[]) */
 	
 	public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
 		addDigitalVideoDisc(dvd1);
