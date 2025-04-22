@@ -1,0 +1,7 @@
+1. Suggestion: Write a toString() method for the DigitalVideoDisc class. What should be the return type of this method?
+Trả lời:
+	Phương thức toString() nên có kiểu trả về là String. Đây là phương thức dùng để trả về thông tin của đối tượng dưới dạng chuỗi, giúp hiển thị dữ liệu dễ đọc hơn khi in ra màn hình.
+
+2. Suggestion: write a boolean isMatch(String title) method in the DigitalVideoDisc which finds out if the corresponding disk is a match given the title?
+Trả lời:
+	Phương thức isMatch(String title) có kiểu trả về là boolean. Mục đích của phương thức là kiểm tra xem tiêu đề đĩa hiện tại có khớp với chuỗi tiêu đề người dùng nhập không (so sánh không phân biệt chữ hoa thường). Nếu khớp thì trả về true, ngược lại trả về false.
