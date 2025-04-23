@@ -1,0 +1,57 @@
+package hust.soict.hedspi.aims.media;
+
+public class DigitalVideoDisc extends Media {
+	
+    private String director;
+    private int length;
+    
+    public String getDirector() {
+        return director;
+    }
+
+    public int getLength() {
+        return length;
+    }
+	
+	public DigitalVideoDisc(String title) {
+        super(title);
+    }    
+    public DigitalVideoDisc(String title, String category, float cost) {
+        super(title, category, cost);
+    }
+    public DigitalVideoDisc(String title, String category, String director, float cost) {
+        super(title, category, cost);
+        this.director = director;
+    }
+    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
+        super(title, category, cost);
+        this.director = director;
+        this.length = length; 
+    }
+	
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        DigitalVideoDisc b = (DigitalVideoDisc) obj;
+
+        boolean titleEquals = (this.getTitle() == null && b.getTitle() == null) ||
+                              (this.getTitle() != null && this.getTitle().equals(b.getTitle()));
+        boolean categoryEquals = (this.getCategory() == null && b.getCategory() == null) ||
+                                 (this.getCategory() != null && this.getCategory().equals(b.getCategory()));
+        boolean directorEquals = (this.getDirector() == null && b.getDirector() == null) ||
+                                 (this.getDirector() != null && this.getDirector().equals(b.getDirector()));
+        boolean lengthEquals = this.getLength() == b.getLength();
+        boolean costEquals = this.getCost() == b.getCost();
+
+        return titleEquals && categoryEquals && directorEquals && lengthEquals && costEquals;
+    }
+    
+    public String toString() {
+        return String.format("DVD - %s - %s - %s - %d: %.2f $",
+                getTitle(), getCategory(), getDirector(), getLength(), getCost());
+    }
+
+    public boolean isMatch(String title) {
+        return this.getTitle().toLowerCase().contains(title.toLowerCase());
+    }
+}
