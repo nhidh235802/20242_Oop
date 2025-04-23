@@ -1,30 +1,20 @@
 package hust.soict.hedspi.garbage;
 
-import java.io.IOException;
 import java.nio.file.Paths;
 import java.nio.file.Files;
+import java.io.IOException;
 
 public class NoGarbage {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        String filename = "test.txt";
+        byte[] inputBytes = Files.readAllBytes(Paths.get(filename));
         
-        String filename = "src/test.txt";
-        byte[] inputBytes = { 0 };
-        long startTime, endTime;
-
-        try {
-            inputBytes = Files.readAllBytes(Paths.get(filename));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-        startTime = System.currentTimeMillis();
-        StringBuilder outpStringBuilder = new StringBuilder();
+        long startTime = System.currentTimeMillis();
+        StringBuilder outputStringBuilder = new StringBuilder();
         for (byte b : inputBytes) {
-            outpStringBuilder.append((char)b);
+        	outputStringBuilder.append((char)b);
         }
-        endTime = System.currentTimeMillis();
-        System.out.println(endTime - startTime);
-
-
+        long endTime = System.currentTimeMillis();
+        System.out.println("Thời gian chạy (ms): " + (endTime - startTime));
     }
 }
