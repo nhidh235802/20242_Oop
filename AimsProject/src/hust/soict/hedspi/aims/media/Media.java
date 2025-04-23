@@ -1,11 +1,12 @@
 package hust.soict.hedspi.aims.media;
 
+import java.util.Comparator;
+
 public abstract class Media {
 
 	public Media() {
 		
-	}
-		
+	}		
 		private static int nbMedia = 0;
 	    private int id;
 	    private String title;
@@ -43,6 +44,38 @@ public abstract class Media {
 
 	    public void setTitle(String title) {
 	        this.title = title;
+	    }
+	    
+	    public String toString() {
+	        return "Media: " + this.getTitle() +
+	                " - Category: " + this.getCategory() +
+	                " - Cost: " + this.getCost() + "$";
+	    }
+	    
+	    public boolean isMatch(String title) {
+	        return this.getTitle().toLowerCase().contains(title.toLowerCase());
+	    }
+	    
+	    public boolean equals(Object obj) {
+	        if (obj == this) {
+	            return true;
+	        }
+	        if (!(obj instanceof Media)) {
+	            return false;
+	        }
+	        return ((Media)obj).getTitle() == this.getTitle();
+	    }
+	    
+	    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
+	    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
+	    
+	    public int compareTo(Media other) {
+	        int titleComparison = this.getTitle().compareTo(other.getTitle());
+	        if (titleComparison != 0) {
+	            return titleComparison;
+	        } else {
+	            return Double.compare(this.getCost(), other.getCost());
+	        }
 	    }
 
 }

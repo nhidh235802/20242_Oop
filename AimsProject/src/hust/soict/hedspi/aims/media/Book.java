@@ -19,7 +19,7 @@ public class Book extends Media {
         if (!authors.contains(authorName)) {
             authors.add(authorName);
         } else {
-            System.out.println("This author has already been in the list!");
+            System.out.println("Author is already on the list.");
         }
     }
 
@@ -27,7 +27,7 @@ public class Book extends Media {
         if (authors.contains(authorName)) {
             authors.remove(authorName);
         } else {
-            System.out.println("No author has been found to remove!");
+            System.out.println("Author not found.");
         }
     }
 

@@ -1,6 +1,6 @@
 package hust.soict.hedspi.aims.media;
 
-public class DigitalVideoDisc extends Disc {
+public class DigitalVideoDisc extends Disc implements Playable {
 	
 	public DigitalVideoDisc(String title) {
         super(title);
@@ -33,11 +33,20 @@ public class DigitalVideoDisc extends Disc {
     }
     
     public String toString() {
-        return String.format("DVD - %s - %s - %s - %d: %.2f $",
-                getTitle(), getCategory(), getDirector(), getLength(), getCost());
+        return this.getId() + " - DVD: " + this.getTitle() +
+                " - Category: " + this.getCategory() +
+                " - Director: " + this.getDirector() +
+                " - DVD length: " + this.getLength() +
+                " - Cost: " + this.getCost() + "$";
     }
 
     public boolean isMatch(String title) {
         return this.getTitle().toLowerCase().contains(title.toLowerCase());
     }
+    
+    public void play() {
+    	System.out.println("Playing DVD: " + this.getTitle());
+    	System.out.println("DVD length: " + this.getLength());
+    	}
+    
 }
