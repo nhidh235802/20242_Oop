@@ -3,15 +3,15 @@ package hust.soict.hedspi.aims.screen.manager;
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
-import java.awt.event.*;
 
 import hust.soict.hedspi.aims.store.Store;
 import hust.soict.hedspi.aims.cart.Cart;
 import hust.soict.hedspi.aims.media.*;
+import hust.soict.hedspi.swing.*;
 
-public class StoreManagerScreen {
+public class StoreManagerScreen extends JFrame {
 
-	private Store store;
+	private static Store store;
 
     JPanel createNorth() {
         JPanel north = new JPanel();
@@ -67,5 +67,26 @@ public class StoreManagerScreen {
 
         return center;
     }
+    
+    public StoreManagerScreen(Store store) {
+        this.store = store;
+        Container cp = getContentPane();
+        cp.setLayout(new BorderLayout());
+        cp.add(createNorth(), BorderLayout.NORTH);
+        cp.add(createCenter(), BorderLayout.CENTER);
+        
+        setTitle("Store");
+		setSize(1024, 768);
+		setLocationRelativeTo(null);
+		setVisible(true);
+    }
+    
+    public static void initSetup() {
 
+    }
+    
+    public static void main(String[] args) {
+        initSetup();
+		new StoreManagerScreen(store);
+	}
 }

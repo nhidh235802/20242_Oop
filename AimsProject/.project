@@ -3,6 +3,8 @@
 	<name>AimsProject</name>
 	<comment></comment>
 	<projects>
+		<project>GUIProject</project>
+		<project>OtherProjects</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
